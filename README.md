@@ -13,20 +13,12 @@ Pre-Requirements:
 
 •	Install npm and node latest
 
-1. docker pull mansigandhi003/currencyconv:latest
-2. docker pull mansigandhi003/historic:latest
-3. docker pull mansigandhi003/bff:latest
-4. docker pull mansigandhi003/app:latest
-5. docker run -d -p 8081:8081 mansigandhi003/currencyconv:latest
-6. docker run -d -p 8083:8083 mansigandhi003/historic:latest
-7. docker run -d -p 8000:8000 ansigandhi003/bff:latest
-8. docker run -d -p 3000:3000 mansigandhi003/app:latest
-9. Then go to your terraform scripts to run the aws-eks cluster creation
+1. Then go to your terraform scripts to run the aws-eks cluster creation
   Perform 2 basic commands
    Terraform init
    Terraform plan
    Terraform apply
-10. After the terraform has been successfully executed perform the following steps:
+2. After the terraform has been successfully executed perform the following steps:
 
     i. terraform output config_map_aws_auth > config_map_aws_auth.yaml &&
     
@@ -50,7 +42,7 @@ Pre-Requirements:
     
     vxi. kubectl proxy --port=8080 --disable-filter=true
     
-11. Then run your Kubernetes deployment and service files accordingly
+3. Then run your Kubernetes deployment and service files accordingly
 
     i. kubectl apply -f Deployment/deployment4.yaml
     
@@ -76,7 +68,7 @@ Pre-Requirements:
        few minutes and hit the external IP on your browser, you will see your website
        running on that IP
        
-12. Now the monitoring part of the project, run all the deployment and service files related
+4. Now the monitoring part of the project, run all the deployment and service files related
     to Prometheus and Grafana
     
     a. Kubectl create namespace monitoring
