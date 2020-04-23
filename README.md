@@ -1,5 +1,18 @@
 # currency-converter-webapp
 
+Pre-Requirements:
+•	Make sure to run Bash scripts on UNIX based system, MacOS or Windows WSL
+
+•	Install Terraform CLI Tool in installed (https://learn.hashicorp.com/terraform/getting-started/install.html)
+
+•	Install AWS CLI Tool (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+
+•	Install kubectl CLI Tool (https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+
+•	Install Docker
+
+•	Install npm and node latest
+
 1. docker pull mansigandhi003/currencyconv:latest
 2. docker pull mansigandhi003/historic:latest
 3. docker pull mansigandhi003/bff:latest
