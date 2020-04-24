@@ -13,6 +13,8 @@ Pre-Requirements:
 
 •	Install npm and node latest
 
+• Git
+
 1. Then go to your terraform scripts to run the aws-eks cluster creation
   Perform 2 basic commands
    Terraform init
@@ -102,3 +104,37 @@ Pre-Requirements:
     n. There you can see the metrics of your nodes and the services deployed, how
         much CPU usage is being done and all other factors
         
+5.  To access the frontend Hostname:
+    
+    i. git clone https://github.com/gandhi-mansi/currency-converter-webapp
+    
+    ii. Change the requests.post() - Url with AWS External curreny-deployment API in the python/Bff/Bff.py 
+    
+    iii. docker build -t <docker-username>/bff:latest .
+    
+    iv. docker run -d -p 8000:8000 <docker-username>/bff:latest
+  
+    v. docker push <docker-username>/bff:latest
+  
+    vi. Change the image name (Line 13) in deployment2.yaml from the deployments folder of this repo to the name of the bff docker image
+    
+    vii. Redeploy the bff deployment using kubectl apply -f ./deployments/deployment2.yaml
+    
+    viii. Change the fetchUrl variable with AWS External BFF API Hostname of python-deployment1 in the frontend finalproject/src/about.js
+    
+    ix. Change the fetchUrl variable with AWS External BFF API Hostname of python-deployment3 in the frontend       finalproject/src/contact.js
+    
+    x. Dockerize your front end using Docker Build . in the root directory of the project and push the project onto DockerHub with a desired tagname
+    
+    docker build -t <docker-username>/app:latest .
+    
+    docker run -d -p 8000:8000 <docker-username>/app:latest
+  
+    docker push <docker-username>/app:latest
+      
+    xi.	Change the image name (Line 13) in deployment4.yaml from the deployments folder of this repo to the name of the frontend docker image
+    
+    xii. Redeploy the frontend deployment using kubectl apply -f ./deployments/deployment4.yaml 
+    
+    xiii. Hit the frontend AWS Hostname to see the output after deploying it in AWS EKS Cluster
+
