@@ -16,10 +16,14 @@ Pre-Requirements:
 • Git
 
 1. Then go to your terraform scripts to run the aws-eks cluster creation
-  Perform 2 basic commands
+  Perform 3 basic commands
+   
    Terraform init
+   
    Terraform plan
+   
    Terraform apply
+   
 2. After the terraform has been successfully executed perform the following steps:
 
     i. terraform output config_map_aws_auth > config_map_aws_auth.yaml &&
